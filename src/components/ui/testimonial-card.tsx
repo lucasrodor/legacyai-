@@ -50,7 +50,7 @@ export function TestimonialCard({
         </div>
       </div>
       <p className="sm:text-md mt-4 text-sm text-zinc-600 font-sans italic leading-relaxed">
-        "{text}"
+        &quot;{text}&quot;
       </p>
     </Card>
   )

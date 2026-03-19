@@ -34,10 +34,10 @@ export function ContactForm() {
             const firstName = (data.name as string).split(' ')[0];
             setName(firstName);
             
-            // @ts-ignore
+            // @ts-expect-error - internal global storage
             window.formData = data;
             // TODO: integrar com backend
-            const submitForm = (formData: any) => { console.log("Submitting:", formData); };
+            const submitForm = (formData: Record<string, unknown>) => { console.log("Submitting:", formData); };
             submitForm(data);
 
             setStatus("success");

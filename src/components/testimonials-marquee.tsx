@@ -101,7 +101,7 @@ export function TestimonialsMarquee() {
                                     ))}
                                 </div>
                                 <p className="text-gray-300 text-xl leading-relaxed font-heading italic">
-                                    "{item.text}"
+                                    &quot;{item.text}&quot;
                                 </p>
                             </div>
 

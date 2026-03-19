@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { useInView, motion, useSpring, useTransform } from "framer-motion";
+import { useInView, useSpring, useTransform } from "framer-motion";
 
 export function Counter({ target }: { target: number }) {
     const ref = useRef(null);

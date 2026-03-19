@@ -7,113 +7,57 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-space-grotesk);
   --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
+  --color-primary-hover: var(--primary-hover);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-aurora: aurora 60s linear infinite;
+  --animate-marquee: marquee var(--duration) linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #8B1A2B;
+  --primary-hover: #6e1422;
+  --gray-light: #F5F5F5;
+  --gray-text: #666666;
+  --border: rgba(0,0,0,0.1);
+  --input: #ffffff;
+  --ring: #8B1A2B;
+  --radius: 0.75rem;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #8B1A2B;
+  --primary-hover: #c0392b;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
@@ -123,7 +67,259 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
+
+body:has(a:hover, button:hover, select:hover, input:hover, textarea:hover) .custom-cursor {
+  width: 24px;
+  height: 24px;
+  background: rgba(139, 26, 43, 0.3);
+  border: 1px solid var(--primary);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.btn-shimmer {
+  background: linear-gradient(90deg, #8B1A2B 40%, #c0392b 50%, #8B1A2B 60%);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Scroll Hide Utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  @property --pos-x {
+    syntax: '<percentage>';
+    initial-value: 11.14%;
+    inherits: false;
+  }
+
+  @property --pos-y {
+    syntax: '<percentage>';
+    initial-value: 140%;
+    inherits: false;
+  }
+
+  @property --spread-x {
+    syntax: '<percentage>';
+    initial-value: 150%;
+    inherits: false;
+  }
+
+  @property --spread-y {
+    syntax: '<percentage>';
+    initial-value: 180.06%;
+    inherits: false;
+  }
+
+  @property --color-1 {
+    syntax: '<color>';
+    initial-value: #000;
+    inherits: false;
+  }
+
+  @property --color-2 {
+    syntax: '<color>';
+    initial-value: #1a0508;
+    inherits: false;
+  }
+
+  @property --color-3 {
+    syntax: '<color>';
+    initial-value: #4d0e18;
+    inherits: false;
+  }
+
+  @property --color-4 {
+    syntax: '<color>';
+    initial-value: #6e1422;
+    inherits: false;
+  }
+
+  @property --color-5 {
+    syntax: '<color>';
+    initial-value: #8b1a2b;
+    inherits: false;
+  }
+
+  @property --border-angle {
+    syntax: '<angle>';
+    initial-value: 20deg;
+    inherits: true;
+  }
+
+  @property --border-color-1 {
+    syntax: '<color>';
+    initial-value: hsla(351, 68%, 20%, 0.2);
+    inherits: true;
+  }
+
+  @property --border-color-2 {
+    syntax: '<color>';
+    initial-value: hsla(351, 68%, 45%, 0.75);
+    inherits: true;
+  }
+
+  @property --stop-1 {
+    syntax: '<percentage>';
+    initial-value: 37.35%;
+    inherits: false;
+  }
+
+  @property --stop-2 {
+    syntax: '<percentage>';
+    initial-value: 61.36%;
+    inherits: false;
+  }
+
+  @property --stop-3 {
+    syntax: '<percentage>';
+    initial-value: 78.42%;
+    inherits: false;
+  }
+
+  @property --stop-4 {
+    syntax: '<percentage>';
+    initial-value: 89.52%;
+    inherits: false;
+  }
+
+  @property --stop-5 {
+    syntax: '<percentage>';
+    initial-value: 100%;
+    inherits: false;
+  }
+}
+
+@layer components {
+  .gradient-button {
+    @apply relative appearance-none cursor-pointer;
+    background: radial-gradient(
+      var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+      var(--color-1) var(--stop-1),
+      var(--color-2) var(--stop-2),
+      var(--color-3) var(--stop-3),
+      var(--color-4) var(--stop-4),
+      var(--color-5) var(--stop-5)
+    );
+    transition:
+      --pos-x 0.5s,
+      --pos-y 0.5s,
+      --spread-x 0.5s,
+      --spread-y 0.5s,
+      --color-1 0.5s,
+      --color-2 0.5s,
+      --color-3 0.5s,
+      --color-4 0.5s,
+      --color-5 0.5s,
+      --border-angle 0.5s,
+      --border-color-1 0.5s,
+      --border-color-2 0.5s,
+      --stop-1 0.5s,
+      --stop-2 0.5s,
+      --stop-3 0.5s,
+      --stop-4 0.5s,
+      --stop-5 0.5s;
+  }
+
+  .gradient-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      var(--border-angle),
+      var(--border-color-1),
+      var(--border-color-2)
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-button:hover {
+    --pos-x: 0%;
+    --pos-y: 91.51%;
+    --spread-x: 120.24%;
+    --spread-y: 103.18%;
+    --color-1: #8b1a2b;
+    --color-2: #6e1422;
+    --color-3: #4d0e18;
+    --color-4: #1a0508;
+    --color-5: #000;
+    --border-angle: 190deg;
+    --border-color-1: hsla(351, 75%, 90%, 0.1);
+    --border-color-2: hsla(351, 68%, 60%, 0.6);
+    --stop-1: 0%;
+    --stop-2: 8.8%;
+    --stop-3: 21.44%;
+    --stop-4: 71.34%;
+    --stop-5: 85.76%;
+  }
+
+  .gradient-button-variant {
+    --color-1: #030303;
+    --color-2: #1a0508;
+    --color-3: #4d0e18;
+    --color-4: #6e1422;
+    --border-angle: 200deg;
+    --border-color-1: hsla(351, 68%, 80%, 0.6);
+    --border-color-2: hsla(351, 68%, 40%, 0.15);
+  }
+
+  .gradient-button-variant:hover {
+    --pos-x: 0%;
+    --pos-y: 95.51%;
+    --spread-x: 110.24%;
+    --spread-y: 110.2%;
+    --color-1: #220000;
+    --color-2: #8b1a2b;
+    --color-3: #4d0e18;
+    --color-4: #1a0508;
+    --color-5: #000;
+    --stop-1: 0%;
+    --stop-2: 10%;
+    --stop-3: 35.44%;
+    --stop-4: 71.34%;
+    --stop-5: 90.76%;
+    --border-angle: 210deg;
+    --border-color-1: hsla(351, 75%, 90%, 0.2);
+    --border-color-2: hsla(351, 68%, 70%, 0.75);
+  }
+}
+
+@layer base {
+  :root {
+    --gradient-color: #8B1A2B;
+    --sparkles-color: #8B1A2B;
+  }
+
+  .dark {
+    --gradient-color: #8B1A2B;
+    --sparkles-color: #ffffff;
   }
 }

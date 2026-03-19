@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { GradientButton } from "./gradient-button";
 import { ArrowUpRight } from "lucide-react";
 

@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
+import type { ISourceOptions } from "@tsparticles/engine";
 
 interface SparklesProps {
   className?: string;
@@ -16,7 +17,7 @@ interface SparklesProps {
   minOpacity?: number | null;
   color?: string;
   background?: string;
-  options?: Record<string, unknown>;
+  options?: ISourceOptions;
 }
 
 export function Sparkles({
@@ -45,7 +46,7 @@ export function Sparkles({
 
   const id = useId()
 
-  const defaultOptions = {
+  const defaultOptions: ISourceOptions = {
     background: {
       color: {
         value: background,
@@ -93,5 +94,5 @@ export function Sparkles({
     detectRetina: true,
   }
 
-  return isReady && <Particles id={id} options={{ ...defaultOptions, ...options } as any} className={className} />
+  return isReady && <Particles id={id} options={{ ...defaultOptions, ...options }} className={className} />
 }

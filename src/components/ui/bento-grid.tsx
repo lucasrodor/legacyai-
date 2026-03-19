@@ -62,9 +62,16 @@ export function BentoGrid({ items, className }: BentoGridProps) {
                     <div className="relative flex flex-col h-full justify-between space-y-6">
                         <div className="flex items-center justify-between">
                             <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-primary/5 group-hover:bg-primary transition-all duration-500">
-                                {React.cloneElement(item.icon as React.ReactElement, { 
-                                    className: cn((item.icon as React.ReactElement).props.className, "w-7 h-7 text-primary group-hover:text-white transition-colors duration-500") 
-                                })}
+                                {React.isValidElement(item.icon) ? (
+                                    React.cloneElement(item.icon as React.ReactElement<{ className?: string }>, { 
+                                        className: cn(
+                                            (item.icon.props as { className?: string }).className, 
+                                            "w-7 h-7 text-primary group-hover:text-white transition-colors duration-500"
+                                        ) 
+                                    })
+                                ) : (
+                                    item.icon
+                                )}
                             </div>
                             {item.status && (
                                 <span
